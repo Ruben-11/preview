@@ -1,0 +1,11 @@
+{
+"company_a":{"name":"Company A","requires":"requires a social security number and a work permit"}, 
+"company_b":{"name":"Company B","requires":"requires a bike security number and a work permit"}, 
+"company_c":{"name":"Company C","requires":"requires an apartment or a flat or a house"}, 
+"company_d":{"name":"Company D","requires":"requires a driver's license and a 2 door car or a 3 door car or a 4 door car or a 5 door car"}, 
+"company_f":{"name":"Company F","requires":"requires a massage qualification certificate and a liability insurance"}, 
+"company_g":{"name":"Company G","requires":"requires a storage place or a garage"}, 
+"company_h":{"name":"Company H","requires":"requires a social security number and a work permit"}, 
+"company_j":{"name":"Company J","requires":"doesn't require anything, you can come and start working immediately"}, 
+"company_k":{"name":"Company K","requires":"requires a PayPal account"}
+}

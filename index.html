@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> Vue js</title>
+   <script src="https://unpkg.com/vue"></script>  
+  </head>
+   
+  <body>
+
+    <div id="company">
+          <h1>
+            List Of Companies
+          </h1>
+      <ul>
+        <li v-for="compan in companies">
+          <div v-if="searchInReq(compan.requires) == true">
+
+            <h2 class="success">  
+              {{compan.name}} 
+              <span> - requirements match</span> 
+              <span class="description">({{compan.requires}})</span>
+            </h2>
+
+          </div>
+
+          <div v-else>
+          
+            <h2 class="faild">  
+              {{compan.name}} 
+              <span> - requirements doesn't match</span>
+              <span class="description">({{compan.requires}})</span>
+            </h2>
+          
+          </div>
+        </li>
+      </ul>
+    </div>
+   <style type="text/css">
+     .success {
+      color: green
+     }
+     .faild {
+      color: red
+     }
+     span.description {
+      display: block;
+      font-size: 16px;
+      color: black;
+     }
+   </style>
+    <script>
+           
+
+      /*https://filrerbyreq.free.beeceptor.com/vueapi123*/
+      const app = new Vue({
+        el: '#company',
+        data: {
+          companies: []
+        },
+        computed: {
+            searchInReq: function(){
+              return function (requires) {
+                let requirements = requires,
+                   conditions = ["bike", "driving license", " driver's license","doesn't require anything"];
+                 return conditions.some(el => requirements.includes(el));
+               };
+            }
+        },
+        created() {
+           fetch("./appcompany.json")
+            .then(response => response.json()).then(json => {
+              this.companies = json});
+        }
+      })
+    </script>
+    <!--  -->
+  </body>
+  </html>
