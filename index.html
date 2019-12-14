@@ -12,13 +12,13 @@
             List Of Companies
           </h1>
       <ul>
-        <li v-for="compan in companies">
-          <div v-if="searchInReq(compan.requires) == true">
+        <li v-for="company in companies">
+          <div v-if="searchInReq(company.requires) == true">
 
             <h2 class="success">  
-              {{compan.name}} 
+              {{company.name}} 
               <span> - requirements match</span> 
-              <span class="description">({{compan.requires}})</span>
+              <span class="description">({{company.requires}})</span>
             </h2>
 
           </div>
@@ -26,9 +26,9 @@
           <div v-else>
           
             <h2 class="failed">  
-              {{compan.name}} 
+              {{company.name}} 
               <span> - requirements doesn't match</span>
-              <span class="description">({{compan.requires}})</span>
+              <span class="description">({{company.requires}})</span>
             </h2>
           
           </div>
@@ -64,7 +64,7 @@
               return function (requires) {
                 let requirements = requires,
                    conditions = ["bike", "driving license", " driver's license","doesn't require anything"];
-                 return conditions.some(el => requirements.includes(el));
+                 return conditions.some(substring => requirements.includes(substring));
                };
             }
         },
