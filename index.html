@@ -6,8 +6,8 @@
   </head>
    
   <body>
-
-    <div id="company">
+    <main>
+      <div id="company">
           <h1>
             List Of Companies
           </h1>
@@ -25,7 +25,7 @@
 
           <div v-else>
           
-            <h2 class="faild">  
+            <h2 class="failed">  
               {{compan.name}} 
               <span> - requirements doesn't match</span>
               <span class="description">({{compan.requires}})</span>
@@ -35,11 +35,14 @@
         </li>
       </ul>
     </div>
+
+    </main>
+    
    <style type="text/css">
      .success {
       color: green
      }
-     .faild {
+     .failed {
       color: red
      }
      span.description {
@@ -48,9 +51,8 @@
       color: black;
      }
    </style>
-    <script>
-           
 
+    <script>
       /*https://filrerbyreq.free.beeceptor.com/vueapi123*/
       const app = new Vue({
         el: '#company',
