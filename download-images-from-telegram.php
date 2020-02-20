@@ -35,7 +35,7 @@ function getFilePath($token,$fileId){
 }
 function saveImg($filePath,$imageName){
 	$ch = curl_init($filePath);
-	$fp = fopen('/home/subtitl9/public_html/achelpbot/telegram_images/'.$imageName, 'wb');
+	$fp = fopen('pathToImageFolder'.$imageName, 'wb');
 	curl_setopt($ch, CURLOPT_FILE, $fp);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_exec($ch);
